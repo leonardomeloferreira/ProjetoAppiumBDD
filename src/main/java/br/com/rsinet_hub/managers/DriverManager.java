@@ -15,16 +15,16 @@ import io.appium.java_client.android.AndroidElement;
 
 public class DriverManager {
 	private static String URL = "http://127.0.0.1:4723/wd/hub";
-	private static AndroidDriver<WebElement> driver;
+	private static AndroidDriver driver;
 	private static Logger logger = Logger.getLogger("ReadProperties.class");
 	
-	public AndroidDriver<WebElement> getDriver() {
+	public AndroidDriver getDriver() {
 		if (driver == null)
 			driver = createDriver();
 		return driver;
 	}
 	
-	public static AndroidDriver<WebElement> createDriver() {
+	public static AndroidDriver createDriver() {
 		ReadProperties prop = new ReadProperties("Configuration");
 		Properties props = prop.getProperty();
 		String deviceName = props.getProperty("deviceName");
@@ -36,7 +36,7 @@ public class DriverManager {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", deviceName);
-		capabilities.setCapability("NewCommandTimeout", "300");
+		capabilities.setCapability("NewCommandTimeout", "2000");
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("appPackage", appPackage);
 		capabilities.setCapability("appActivity", appActivity);
@@ -50,8 +50,9 @@ public class DriverManager {
 		return driver;
 	}
 
-	public static void closeDriver() {
+	public void closeApp() {
 		driver.closeApp();
+//		driver.quit();
 	
 	}
 

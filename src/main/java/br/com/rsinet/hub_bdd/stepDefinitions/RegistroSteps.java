@@ -1,5 +1,7 @@
 package br.com.rsinet.hub_bdd.stepDefinitions;
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.WebElement;
 
 import br.com.rsinet_hub.managers.DriverManager;
@@ -16,7 +18,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class RegistroSteps {
 	
-	private AndroidDriver<WebElement> driver;
+	private AndroidDriver driver;
 	private TestContext testContext;
 	private Home_Page homePage;
 	private DriverManager manager;
@@ -61,22 +63,24 @@ public class RegistroSteps {
 	}
 	@E("^usuario preencher os campos com dados invalidos$")
 	public void usuario_preencher_os_campos_com_dados_invalidos() throws Throwable {
-		register.username("leon");
-		register.email("leoanrdo3@gma#$%il.com");
+		register.username("leon###ard45");
+		register.email("leoanr@#do3@gmail.com");
 		register.senha("Test@123");
 		register.confirmaSenha("Test@123");
 		register.nome("leoanrdo");
 		register.sobrenome("ferreira");
 		register.telefone("111111111");
-		register.estado("sao paulinho");
+		register.estado("Sao Paulo");
 		register.endereco("Rua Alto Alegre");
-		register.cidade("OZ");
+		register.cidade("OZasco");
+		register.cep("04324-@#$324");
 		register.pais("Brazil");
-		register.cep("043@#$24-324");
 	}
 	@Entao("^botao registrar estara indisponivel$")
 	public void botao_registrar_estara_indisponivel() throws Throwable {
-		register.verificarBtnRegistrar();
+		register.click_Register();
+		assertEquals(false, register.verificarBtnRegistrar());
+//		register.verificarBtnRegistrar();
 	}
 
 }

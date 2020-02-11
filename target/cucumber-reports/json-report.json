@@ -1,0 +1,130 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      },
+      {
+        "line": 2,
+        "value": "#coding: utf-8"
+      }
+    ],
+    "line": 4,
+    "elements": [
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 237820800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que o usuario esteja na pagina inicial",
+            "match": {
+              "location": "HomePageSteps.que_o_usuario_esteja_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 2687078700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "usuario navegar para a pagina de registro",
+            "match": {
+              "location": "HomePageSteps.usuario_navegar_para_a_pagina_de_registro()"
+            },
+            "keyword": "Quando "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 13940054800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.BeforeSteps()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Nao registrar usuario com dados invalidos",
+        "description": "",
+        "id": "registar-usuario-no-aplicativo;nao-registrar-usuario-com-dados-invalidos",
+        "after": [
+          {
+            "result": {
+              "duration": 536091100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 222587500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.AfterSteps()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 39232959800,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "usuario preencher os campos com dados invalidos",
+            "match": {
+              "location": "RegistroSteps.usuario_preencher_os_campos_com_dados_invalidos()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 9484601700,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "botao registrar estara indisponivel",
+            "match": {
+              "location": "RegistroSteps.botao_registrar_estara_indisponivel()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 16,
+            "name": "@TesteDeRegistro"
+          },
+          {
+            "line": 16,
+            "name": "@Invalido"
+          }
+        ]
+      }
+    ],
+    "name": "Registar usuario no aplicativo",
+    "description": "",
+    "id": "registar-usuario-no-aplicativo",
+    "keyword": "Funcionalidade",
+    "uri": "Registro.feature"
+  }
+]

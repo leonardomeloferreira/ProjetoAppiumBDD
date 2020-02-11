@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import br.com.rsinet.hub_bdd.util.Scroll;
 import io.appium.java_client.android.AndroidDriver;
 
 public class Home_Page {
@@ -58,5 +59,8 @@ AndroidDriver driver;
 	}
 	public void click_Laptop() {
 		lnk_Laptop.click();
+	}
+	public void click_Categoria(String categoria) {
+		Scroll.scrollAndClick(driver, categoria);
 	}
 }

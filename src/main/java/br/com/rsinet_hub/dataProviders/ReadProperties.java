@@ -14,13 +14,11 @@ public class ReadProperties {
 	private Properties properties;
 	private String propertiesFile;
 	private final static String propFilePath = "//configs//";
-	private final String extentFilePath = "//configs//extent-config.properties";
-
+	private final String extentFilePath = "//configs//extent-config.xml";
 
 	public ReadProperties(String propertiesFile) {
 		this.propertiesFile = propertiesFile;
 	}
-
 
 	public ReadProperties() {
 		BufferedReader reader;
@@ -56,12 +54,12 @@ public class ReadProperties {
 		}
 		return properties;
 	}
-	public String getReportConfigPath() {
-		String reportConfigPath = properties.getProperty(System.getProperty("user.dir") + "reportConfigPath");
-		if (reportConfigPath != null)
-			return reportConfigPath;
-		else
-			throw new RuntimeException(
-					"Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");
-	}
+//	public String getReportConfigPath() {
+//		String reportConfigPath = properties.getProperty(System.getProperty("user.dir") + "reportConfigPath");
+//		if (reportConfigPath != null)
+//			return reportConfigPath;
+//		else
+//			throw new RuntimeException(
+//					"Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");
+//	}
 }

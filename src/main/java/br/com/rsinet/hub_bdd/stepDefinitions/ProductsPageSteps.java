@@ -1,6 +1,5 @@
 package br.com.rsinet.hub_bdd.stepDefinitions;
 
-import org.openqa.selenium.WebElement;
 
 import br.com.rsinet_hub.managers.DriverManager;
 import br.com.rsinet_hub.managers.TestContext;
@@ -13,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class ProductsPageSteps {
 
-	private AndroidDriver<WebElement> driver;
+	private AndroidDriver driver;
 	private TestContext testContext;
 	private Home_Page homePage;
 	private DriverManager manager;
@@ -44,6 +43,7 @@ public class ProductsPageSteps {
 	public void usuario_clica_no_produto() throws Throwable {
 		String nomeProduto2 = "HP PAVILION 15T TOUCH LAPTOP";
 		productsPage.click_Laptopescolhido(nomeProduto2);
+		Thread.sleep(3000);
 	}
 	@Entao("^o produto sera exibido na tela$")
 	public void o_produto_sera_exibido_na_tela() throws Throwable {

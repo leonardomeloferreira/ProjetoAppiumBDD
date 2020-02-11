@@ -125,6 +125,7 @@ public class Register_Page {
 		btn_Registrar.click();
 	}
 	public Boolean verificarBtnRegistrar() {
+		Scroll.swipe(523, 1400, 523, 1300, driver);
 		return btn_Registrar.isEnabled();
 	}
 }
