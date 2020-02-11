@@ -12,7 +12,6 @@ import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class Register_Page {
-
 	AndroidDriver driver;
 
 	public Register_Page(AndroidDriver driver) {
@@ -32,11 +31,12 @@ public class Register_Page {
 	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextConfirmPassword']/child::*[1]")
 	private WebElement txtbx_ConfirmaSenha;
 
+	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextFirstName']/child::*[1]")
+	private WebElement txtbx_Nome;
+	
 	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextLastName']/child::*[1]")
 	private WebElement txtbx_Sobrenome;
 
-	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextFistName']/child::*[1]")
-	private WebElement txtbx_Nome;
 
 	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.Advantage.aShopping:id/AosEditTextPhoneNumber']/child::*[1]")
 	private WebElement txtbx_Telefone;
@@ -79,14 +79,14 @@ public class Register_Page {
 		txtbx_ConfirmaSenha.sendKeys(confirmaSenha);
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 	}	
-	public void sobrenome(String sobrenome) {
-		txtbx_Sobrenome.click();
-		txtbx_Sobrenome.sendKeys(sobrenome);
-		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-	}
 	public void nome(String nome) {
 		txtbx_Nome.click();
 		txtbx_Nome.sendKeys(nome);
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+	}
+	public void sobrenome(String sobrenome) {
+		txtbx_Sobrenome.click();
+		txtbx_Sobrenome.sendKeys(sobrenome);
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 	}
 	public void telefone(String telefone) {
@@ -94,14 +94,14 @@ public class Register_Page {
 		txtbx_Telefone.sendKeys(telefone);
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 	}
+	public void endereco(String endereco) {
+		txtbx_Endereco.click();
+		txtbx_Endereco.sendKeys(endereco);
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+	}
 	public void estado(String estado) {
 		txtbx_Estado.click();
 		txtbx_Estado.sendKeys(estado);
-		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-	}
-	public void endereco(String endereco) {
-		txtbx_Estado.click();
-		txtbx_Estado.sendKeys(endereco);
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 	}
 	public void cidade(String cidade) {
@@ -115,13 +115,16 @@ public class Register_Page {
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 	}
 	public void pais(String pais) {
+		txtbx_Pais.click();
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 		Scroll.scrollAndClick(driver, pais);
 	}
-	public boolean register() {
-		Scroll.scrollAndClick(driver, "REGISTER");
+	public void click_Register() {
+		Scroll.scroll(driver, "REGISTER");
 		Scroll.swipe(523, 1400, 523, 1300, driver);
-		btn_Registrar.isEnabled();
-		return false;
+		btn_Registrar.click();
+	}
+	public Boolean verificarBtnRegistrar() {
+		return btn_Registrar.isEnabled();
 	}
 }

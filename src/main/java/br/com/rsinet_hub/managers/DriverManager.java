@@ -36,6 +36,7 @@ public class DriverManager {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", deviceName);
+		capabilities.setCapability("NewCommandTimeout", "300");
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("appPackage", appPackage);
 		capabilities.setCapability("appActivity", appActivity);
@@ -49,7 +50,7 @@ public class DriverManager {
 		return driver;
 	}
 
-	public void closeDriver() {
+	public static void closeDriver() {
 		driver.closeApp();
 	
 	}

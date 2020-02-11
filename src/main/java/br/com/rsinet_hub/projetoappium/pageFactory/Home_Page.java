@@ -23,11 +23,20 @@ AndroidDriver driver;
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/linearLayoutLogin")
 	private WebElement lnk_Login;
 	
-	@FindBy(how = How.ID, using = "menuSearch")
-	private WebElement lnk_MenuSearch;
+	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/editTextSearch")
+	private WebElement txtbx_Search;
 	
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/textViewSingUpToday")
 	private WebElement lnk_CreateAccount;
+	
+	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewSearch")
+	private WebElement btn_lupa;
+	
+	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/textViewSingUpToday")
+	private WebElement lnk_SignUp;
+	
+	@FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
+	private WebElement lnk_Laptop;
 	
 	public void clicarHome() {
 		btn_Home.click();
@@ -37,5 +46,17 @@ AndroidDriver driver;
 	}
 	public void clicarCriarNovaConta() {
 		lnk_CreateAccount.click();
+	}
+	public void escreverPesquisa(String produto) {
+		txtbx_Search.sendKeys(produto);
+	}
+	public void click_Lupa() {
+		btn_lupa.click();
+	}
+	public void click_SignUp() {
+		lnk_SignUp.click();
+	}
+	public void click_Laptop() {
+		lnk_Laptop.click();
 	}
 }
