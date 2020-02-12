@@ -1,9 +1,12 @@
 package br.com.rsinet.hub_bdd.stepDefinitions;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.WebElement;
 
+import br.com.rsinet.hub_bdd.util.Constant;
+import br.com.rsinet.hub_bdd.util.ExcelUtils;
 import br.com.rsinet_hub.managers.DriverManager;
 import br.com.rsinet_hub.managers.TestContext;
 import br.com.rsinet_hub.projetoappium.pageFactory.Home_Page;
@@ -23,20 +26,20 @@ public class RegistroSteps {
 	private Home_Page homePage;
 	private DriverManager manager;
 	private Register_Page register;
-	
+	String usuario = "LeEoerrna4t7";
 
-	public RegistroSteps(TestContext context) {
+	public RegistroSteps(TestContext context) throws Exception {
 		testContext = context;
 		homePage = testContext.getPageFactoryManager().getHomePage();
 		manager = testContext.getDriverManager();
 		register = testContext.getPageFactoryManager().getRegisterPage();
 		driver = manager.getDriver();
-
 	}
 
 	@E("^usuario preencher os campos com dados validos$")
 	public void usuario_preencher_os_campos_com_dados_validos() throws Throwable {
-		register.username("leonard45");
+		
+		register.username(usuario);
 		register.email("leoanrdo3@gmail.com");
 		register.senha("Test@123");
 		register.confirmaSenha("Test@123");
@@ -60,6 +63,8 @@ public class RegistroSteps {
 	public void usuario_sera_registrado_com_sucesso() throws Throwable {
 		Thread.sleep(3000);
 		homePage.clicarHome();
+		assertTrue(homePage.user().equals(usuario));
+		
 	}
 	@E("^usuario preencher os campos com dados invalidos$")
 	public void usuario_preencher_os_campos_com_dados_invalidos() throws Throwable {
@@ -80,7 +85,6 @@ public class RegistroSteps {
 	public void botao_registrar_estara_indisponivel() throws Throwable {
 		register.click_Register();
 		assertEquals(false, register.verificarBtnRegistrar());
-//		register.verificarBtnRegistrar();
 	}
 
 }

@@ -13,4 +13,8 @@ E usuario clicar no produto desejado
 Entao A pagina do produto escolhido sera exibida na tela
 
 @BuscaPelaHome @Invalido
-Cenario: 
+Cenario: Busca produto pela tela inicial invalido
+Quando usuario clicar na categoria escolhida
+E filtrar a busca 
+Entao Nenhum produto sera exibido
+

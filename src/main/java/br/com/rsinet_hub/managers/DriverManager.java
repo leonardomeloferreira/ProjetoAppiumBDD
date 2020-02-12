@@ -14,17 +14,19 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class DriverManager {
-	private static String URL = "http://127.0.0.1:4723/wd/hub";
-	private static AndroidDriver driver;
+	private String URL = "http://127.0.0.1:4723/wd/hub";
+	private AndroidDriver driver;
+	
 	private static Logger logger = Logger.getLogger("ReadProperties.class");
 	
 	public AndroidDriver getDriver() {
-		if (driver == null)
+		if(driver == null)
 			driver = createDriver();
 		return driver;
 	}
-	
-	public static AndroidDriver createDriver() {
+
+	private AndroidDriver createDriver() {
+
 		ReadProperties prop = new ReadProperties("Configuration");
 		Properties props = prop.getProperty();
 		String deviceName = props.getProperty("deviceName");
@@ -32,29 +34,25 @@ public class DriverManager {
 		String platformName = props.getProperty("platformName");
 		String appPackage = props.getProperty("appPackage");
 		String appActivity = props.getProperty("appActivity");
-		String port = props.getProperty("port");
-
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("deviceName", deviceName);
-		capabilities.setCapability("NewCommandTimeout", "2000");
-		capabilities.setCapability("platformName", platformName);
-		capabilities.setCapability("appPackage", appPackage);
-		capabilities.setCapability("appActivity", appActivity);
+		
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("deviceName", deviceName);
+		caps.setCapability("newCommandTimeout", "2000");
+		caps.setCapability("platformName", platformName);
+		caps.setCapability("appPackage", appPackage);
+		caps.setCapability("appActivity", appActivity);
 		try {
-			driver = new AndroidDriver<WebElement>(new URL(URL), capabilities);
+			driver = new AndroidDriver(new URL(URL), caps);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		} catch (MalformedURLException e) {
+		}catch (MalformedURLException e) {
 			logger.info(e.getMessage());
 			e.printStackTrace();
 		}
 		return driver;
 	}
-
-	public void closeApp() {
-		driver.closeApp();
-//		driver.quit();
 	
+	public void closeDriver() {
+		driver.closeApp();
 	}
-
 	
 }

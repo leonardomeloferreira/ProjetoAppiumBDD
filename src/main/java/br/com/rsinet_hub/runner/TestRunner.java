@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "Feature"
 , glue = { "br.com.rsinet.hub_bdd.stepDefinitions" }
-, tags = {"@TesteDeRegistro", "@Invalido" }
+//, tags = {"@BuscaPelaLupa"}
 , plugin = { "pretty", "json:target/cucumber-reports/json-report.json",
 				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" }
 , monochrome = true)

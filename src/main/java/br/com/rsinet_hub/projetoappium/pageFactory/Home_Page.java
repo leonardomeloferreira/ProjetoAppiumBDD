@@ -39,6 +39,9 @@ AndroidDriver driver;
 	@FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
 	private WebElement lnk_Laptop;
 	
+	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/textViewMenuUser")
+	private WebElement txt_User;
+	
 	public void clicarHome() {
 		btn_Home.click();
 	}
@@ -60,6 +63,10 @@ AndroidDriver driver;
 	public void click_Laptop() {
 		lnk_Laptop.click();
 	}
+	public String user() {
+		return txt_User.getText();
+	}
+	
 	public void click_Categoria(String categoria) {
 		Scroll.scrollAndClick(driver, categoria);
 	}

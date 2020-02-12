@@ -3,6 +3,466 @@
     "comments": [
       {
         "line": 1,
+        "value": "#language:pt"
+      },
+      {
+        "line": 2,
+        "value": "#coding: utf-8"
+      }
+    ],
+    "line": 4,
+    "elements": [
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 1312769300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que o usuario esteja na pagina inicial",
+            "match": {
+              "location": "HomePageSteps.que_o_usuario_esteja_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 12072868400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.BeforeSteps()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Busca produto pela tela inicial valido",
+        "description": "",
+        "id": "buscar-produto-pela-tela-inicial-no-aplicativo;busca-produto-pela-tela-inicial-valido",
+        "after": [
+          {
+            "result": {
+              "duration": 609889099,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 187490900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.AfterSteps()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1056921200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "usuario clicar na categoria desejada",
+            "match": {
+              "location": "HomePageSteps.usuario_clicar_na_categoria_desejada()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 4499753500,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "usuario clicar no produto desejado",
+            "match": {
+              "location": "ProductsPageSteps.usuario_clicar_no_produto_desejado()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 281528900,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "A pagina do produto escolhido sera exibida na tela",
+            "match": {
+              "location": "ProductsPageSteps.a_pagina_do_produto_escolhido_sera_exibida_na_tela()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@BuscaPelaHome"
+          },
+          {
+            "line": 9,
+            "name": "@Valido"
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 91207699,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que o usuario esteja na pagina inicial",
+            "match": {
+              "location": "HomePageSteps.que_o_usuario_esteja_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 11421093700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.BeforeSteps()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Busca produto pela tela inicial invalido",
+        "description": "",
+        "id": "buscar-produto-pela-tela-inicial-no-aplicativo;busca-produto-pela-tela-inicial-invalido",
+        "after": [
+          {
+            "result": {
+              "duration": 491651000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 246479600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.AfterSteps()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2465538400,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "usuario clicar na categoria escolhida",
+            "match": {
+              "location": "HomePageSteps.usuario_clicar_na_categoria_escolhida()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 11770194700,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "filtrar a busca",
+            "match": {
+              "location": "ProductsPageSteps.filtrar_a_busca()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 671269500,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Nenhum produto sera exibido",
+            "match": {
+              "location": "ProductsPageSteps.nenhum_produto_sera_exibido()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 15,
+            "name": "@BuscaPelaHome"
+          },
+          {
+            "line": 15,
+            "name": "@Invalido"
+          }
+        ]
+      }
+    ],
+    "name": "Buscar produto pela tela inicial no aplicativo",
+    "description": "",
+    "id": "buscar-produto-pela-tela-inicial-no-aplicativo",
+    "keyword": "Funcionalidade",
+    "uri": "BuscaPelaHome.feature"
+  },
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language:pt"
+      },
+      {
+        "line": 2,
+        "value": "#coding: utf-8"
+      }
+    ],
+    "line": 4,
+    "elements": [
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 96108500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que o usuario esteja na pagina inicial",
+            "match": {
+              "location": "HomePageSteps.que_o_usuario_esteja_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 12003003801,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.BeforeSteps()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Buscar produto por texto valido",
+        "description": "",
+        "id": "buscar-produto-por-texto-no-aplicativo;buscar-produto-por-texto-valido",
+        "after": [
+          {
+            "result": {
+              "duration": 482405401,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 253333501,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.AfterSteps()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4373590200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "usuario buscar na barra de pesquisa por produto valido",
+            "match": {
+              "location": "HomePageSteps.usuario_buscar_na_barra_de_pesquisa_por_produto_valido()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 7071112399,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "usuario clica no produto",
+            "match": {
+              "location": "ProductsPageSteps.usuario_clica_no_produto()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 81164500,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "o produto sera exibido na tela",
+            "match": {
+              "location": "ProductsPageSteps.o_produto_sera_exibido_na_tela()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@BuscaPelaLupa"
+          },
+          {
+            "line": 9,
+            "name": "@Valido"
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 60236600,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que o usuario esteja na pagina inicial",
+            "match": {
+              "location": "HomePageSteps.que_o_usuario_esteja_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 11581258400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.BeforeSteps()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Buscar produto por texto invalido",
+        "description": "",
+        "id": "buscar-produto-por-texto-no-aplicativo;buscar-produto-por-texto-invalido",
+        "after": [
+          {
+            "result": {
+              "duration": 606593400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 283014300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.AfterSteps()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4636851400,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "usuario buscar na barra de pesquisa por produto invalido",
+            "match": {
+              "location": "HomePageSteps.usuario_buscar_na_barra_de_pesquisa_por_produto_invalido()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 1206844100,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Nenhum resultado sera exibido",
+            "match": {
+              "location": "ProductsPageSteps.nenhum_resultado_sera_exibido()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 15,
+            "name": "@BuscaPelaLupa"
+          },
+          {
+            "line": 15,
+            "name": "@Invalido"
+          }
+        ]
+      }
+    ],
+    "name": "Buscar produto por texto no aplicativo",
+    "description": "",
+    "id": "buscar-produto-por-texto-no-aplicativo",
+    "keyword": "Funcionalidade",
+    "uri": "BuscaPelaLupa.feature"
+  },
+  {
+    "comments": [
+      {
+        "line": 1,
         "value": "#language: pt"
       },
       {
@@ -21,7 +481,7 @@
         "steps": [
           {
             "result": {
-              "duration": 237820800,
+              "duration": 67544800,
               "status": "passed"
             },
             "line": 7,
@@ -33,7 +493,7 @@
           },
           {
             "result": {
-              "duration": 2687078700,
+              "duration": 3494782500,
               "status": "passed"
             },
             "line": 8,
@@ -49,7 +509,127 @@
         "before": [
           {
             "result": {
-              "duration": 13940054800,
+              "duration": 11853662099,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.BeforeSteps()"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "Registra usuario valido",
+        "description": "",
+        "id": "registar-usuario-no-aplicativo;registra-usuario-valido",
+        "after": [
+          {
+            "result": {
+              "duration": 822412400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 326932700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.AfterSteps()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 40574733600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "usuario preencher os campos com dados validos",
+            "match": {
+              "location": "RegistroSteps.usuario_preencher_os_campos_com_dados_validos()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 6630780800,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "clicar no botao registrar",
+            "match": {
+              "location": "RegistroSteps.clicar_no_botao_registrar()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 4105528700,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "usuario sera registrado com sucesso",
+            "match": {
+              "location": "RegistroSteps.usuario_sera_registrado_com_sucesso()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 10,
+            "name": "@TesteDeRegistro"
+          },
+          {
+            "line": 10,
+            "name": "@Valido"
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 48202400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que o usuario esteja na pagina inicial",
+            "match": {
+              "location": "HomePageSteps.que_o_usuario_esteja_na_pagina_inicial()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 3703623401,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "usuario navegar para a pagina de registro",
+            "match": {
+              "location": "HomePageSteps.usuario_navegar_para_a_pagina_de_registro()"
+            },
+            "keyword": "Quando "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 12947661601,
               "status": "passed"
             },
             "match": {
@@ -64,7 +644,7 @@
         "after": [
           {
             "result": {
-              "duration": 536091100,
+              "duration": 558188000,
               "status": "passed"
             },
             "match": {
@@ -73,7 +653,7 @@
           },
           {
             "result": {
-              "duration": 222587500,
+              "duration": 295415400,
               "status": "passed"
             },
             "match": {
@@ -86,7 +666,7 @@
         "steps": [
           {
             "result": {
-              "duration": 39232959800,
+              "duration": 39365847000,
               "status": "passed"
             },
             "line": 18,
@@ -98,7 +678,7 @@
           },
           {
             "result": {
-              "duration": 9484601700,
+              "duration": 9029644200,
               "status": "passed"
             },
             "line": 19,
