@@ -19,9 +19,9 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class Hooks {
 
-	AndroidDriver driver;
-	TestContext testContext;
-	DriverManager manager;
+	private AndroidDriver driver;
+	private TestContext testContext;
+	private DriverManager manager;
 
 	public Hooks(TestContext context) {
 		testContext = context;

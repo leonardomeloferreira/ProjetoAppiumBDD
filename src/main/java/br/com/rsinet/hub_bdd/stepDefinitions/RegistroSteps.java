@@ -31,7 +31,7 @@ public class RegistroSteps {
 	private DriverManager manager;
 	private Register_Page register;
 	private TouchAction action;
-	String usuario = "LeEobrna4t7";
+	String usuario = "LeEgbrna4t7";
 
 	public RegistroSteps(TestContext context) throws Exception {
 		testContext = context;
