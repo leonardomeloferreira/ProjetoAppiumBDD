@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.time.Duration;
+
 import br.com.rsinet_hub.managers.DriverManager;
 import br.com.rsinet_hub.managers.TestContext;
 import br.com.rsinet_hub.projetoappium.pageFactory.Home_Page;
@@ -13,7 +15,9 @@ import cucumber.api.PendingException;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.WaitOptions;
 
 public class ProductsPageSteps {
 
@@ -22,7 +26,8 @@ public class ProductsPageSteps {
 	private Home_Page homePage;
 	private DriverManager manager;
 	private Products_Page productsPage;
-	
+	private TouchAction action;
+
 	public ProductsPageSteps(TestContext context) {
 		testContext = context;
 		homePage = testContext.getPageFactoryManager().getHomePage();
@@ -47,9 +52,14 @@ public class ProductsPageSteps {
 	//Busca pela home invalido
 	@E("^filtrar a busca$")
 	public void filtrar_a_busca() throws Throwable {
-		Thread.sleep(3000);
+		action = new TouchAction(driver);
+		action.waitAction(new WaitOptions().withDuration(Duration.ofMillis(3000))).perform();
+
+//		Thread.sleep(3000);
 		productsPage.click_Filtro();
-		Thread.sleep(2000);
+		action.waitAction(new WaitOptions().withDuration(Duration.ofMillis(2000))).perform();
+
+//		Thread.sleep(2000);
 		productsPage.filtro_Compatibilidade();
 		productsPage.filtro_SmartPhone();
 		productsPage.filtro_Compatibilidade();
@@ -69,9 +79,13 @@ public class ProductsPageSteps {
 	//Busca pela lupa valido
 	@E("^usuario clica no produto$")
 	public void usuario_clica_no_produto() throws Throwable {
+		action = new TouchAction(driver);
+
 		String nomeProduto2 = "HP PAVILION 15T TOUCH LAPTOP";
 		productsPage.click_Laptopescolhido(nomeProduto2);
-		Thread.sleep(3000);
+		action.waitAction(new WaitOptions().withDuration(Duration.ofMillis(3000))).perform();
+
+//		Thread.sleep(3000);
 	}
 	@Entao("^o produto sera exibido na tela$")
 	public void o_produto_sera_exibido_na_tela() throws Throwable {

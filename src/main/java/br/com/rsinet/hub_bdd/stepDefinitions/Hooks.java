@@ -9,9 +9,9 @@ import org.openqa.selenium.TakesScreenshot;
 
 import com.cucumber.listener.Reporter;
 
+import br.com.rsinet.hub_bdd.runner.TestRunner;
 import br.com.rsinet_hub.managers.DriverManager;
 import br.com.rsinet_hub.managers.TestContext;
-import br.com.rsinet_hub.runner.TestRunner;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;

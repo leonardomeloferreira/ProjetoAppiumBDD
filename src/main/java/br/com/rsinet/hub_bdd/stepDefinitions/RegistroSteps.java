@@ -3,6 +3,8 @@ package br.com.rsinet.hub_bdd.stepDefinitions;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 
 import br.com.rsinet.hub_bdd.util.Constant;
@@ -17,7 +19,9 @@ import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.WaitOptions;
 
 public class RegistroSteps {
 	
@@ -26,7 +30,8 @@ public class RegistroSteps {
 	private Home_Page homePage;
 	private DriverManager manager;
 	private Register_Page register;
-	String usuario = "LeEoerrna4t7";
+	private TouchAction action;
+	String usuario = "LeEobrna4t7";
 
 	public RegistroSteps(TestContext context) throws Exception {
 		testContext = context;
@@ -61,7 +66,10 @@ public class RegistroSteps {
 
 	@Entao("^usuario sera registrado com sucesso$")
 	public void usuario_sera_registrado_com_sucesso() throws Throwable {
-		Thread.sleep(3000);
+		action = new TouchAction(driver);
+		action.waitAction(new WaitOptions().withDuration(Duration.ofMillis(3000))).perform();
+
+//		Thread.sleep(3000);
 		homePage.clicarHome();
 		assertTrue(homePage.user().equals(usuario));
 		

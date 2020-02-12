@@ -1,4 +1,4 @@
-package br.com.rsinet_hub.runner;
+package br.com.rsinet.hub_bdd.runner;
 
 import java.io.File;
 
